@@ -1,11 +1,10 @@
-import { type AppType } from "next/dist/shared/lib/utils";
 import Layout from "../components/Layout";
 import "../styles/globals.css";
 import "nprogress/nprogress.css";
 import NProgress from "nprogress";
 import { useEffect } from "react";
 
-const MyApp: AppType = ({ Component, pageProps, router }) => {
+const MyApp = ({ Component, pageProps, router }) => {
   useEffect(() => {
     const handleRouteStart = () => NProgress.start();
     const handleRouteDone = () => NProgress.done();

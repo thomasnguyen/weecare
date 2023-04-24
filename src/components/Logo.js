@@ -15,7 +15,7 @@ const LogoContainer = styled.div`
   width: 100%;
   font-size: 15px;
   font-weight: 500;
-  margin-bottom: 1.5 rem;
+  margin-bottom: 1.5rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #e4e7ea;
 `;

@@ -166,9 +166,13 @@ const Header = () => {
       </span>
       {showMobileMenu && (
         <div className="mobileMenu">
-          <div className="mobileMenu-close" onClick={handleMenuClick}>
-            X
+          <div
+            className="mobileMenu-close material-symbols-outlined"
+            onClick={handleMenuClick}
+          >
+            close
           </div>
+
           <Link href="/" onClick={handleMenuClick}>
             <div className="mobileMenu-item">Home</div>
           </Link>
@@ -194,7 +198,6 @@ const Header = () => {
               >
                 <li onClick={() => setSuggestedQuery("")}>
                   <span style={{ marginRight: "0.5rem" }}>
-                    {" "}
                     {getMediaIcon(result.wrapperType)}
                   </span>
                   <a

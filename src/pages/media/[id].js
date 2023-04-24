@@ -82,7 +82,6 @@ const AlbumPage = styled.div`
 export default function Album({ album }) {
   const router = useRouter();
   const { id } = router.query;
-  console.log({ album });
 
   const wrapperType = album?.wrapperType;
 

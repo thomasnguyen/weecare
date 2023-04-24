@@ -100,7 +100,6 @@ export default function Media({ media }) {
 
   useEffect(() => {
     const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
-    console.log("favorites", favorites);
     if (
       favorites.some(
         (fav) => fav.id.attributes["im:id"] === media.id.attributes["im:id"]

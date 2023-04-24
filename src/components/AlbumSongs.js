@@ -7,6 +7,7 @@ const AlbumSongsTable = styled.div`
   flex-direction: column;
   width: 100%;
   margin-top: 2rem;
+
   .albumSongs-table-header {
     display: flex;
     flex-direction: row;

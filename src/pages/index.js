@@ -29,7 +29,6 @@ const Home = ({ albums }) => {
 
   const setMediaType = async (mediaType) => {
     const mediaData = await fetchMediaData(mediaType);
-    console.log({ mediaData });
     setMediaData(mediaData);
   };
 

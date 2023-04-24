@@ -23,7 +23,6 @@ export default function Favorites() {
 
   useEffect(() => {
     const favoritesFromLocalStorage = getFavoritesFromLocalStorage();
-    console.log({ favoritesFromLocalStorage });
     setFavorites(favoritesFromLocalStorage);
   }, []);
 
