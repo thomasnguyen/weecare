@@ -23,7 +23,7 @@ const Logo = () => {
   return (
     <Link href="/">
       <LogoContainer>
-        <LogoImg src="/logo.svg" alt="Logo" />
+        <LogoImg src="/logo.svg" alt="Logo" width={25} height={25} />
         <div
           style={{
             marginLeft: "0.25rem",
