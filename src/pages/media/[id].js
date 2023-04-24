@@ -93,7 +93,7 @@ export default function Album({ album }) {
     <AlbumPage>
       <Link href="/">
         <div className="album-page-header-back">
-          <span class="material-symbols-outlined">keyboard_backspace</span>
+          <span className="material-symbols-outlined">keyboard_backspace</span>
         </div>
       </Link>
       <div className="album-page-header">
