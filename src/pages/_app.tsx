@@ -1,6 +1,6 @@
 import { type AppType } from "next/dist/shared/lib/utils";
-import Layout from "~/components/Layout";
-import "~/styles/globals.css";
+import Layout from "../components/Layout";
+import "../styles/globals.css";
 import "nprogress/nprogress.css";
 import NProgress from "nprogress";
 import { useEffect } from "react";
