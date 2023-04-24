@@ -48,7 +48,7 @@ const AlbumSongs = ({ albumId }) => {
 
   useEffect(() => {
     const fetchAlbumSongs = async () => {
-      const apiUrl = `https://itunes.apple.com/lookup?id=${albumId}&entity=song`;
+      const apiUrl = `/api/itunes?id=${albumId}&entity=song`;
       try {
         const response = await fetch(apiUrl);
         const data = await response.json();
@@ -73,7 +73,7 @@ const AlbumSongs = ({ albumId }) => {
         </div>
         <div className="albumSongs-table-body">
           {songs.map((song) => (
-            <div className="albumSongs-table-body-row" key={songs.trackName}>
+            <div className="albumSongs-table-body-row" key={song.trackName}>
               <div className="albumSongs-table-body-item">{song.trackName}</div>
               <div className="albumSongs-table-body-item">
                 {song.artistName}

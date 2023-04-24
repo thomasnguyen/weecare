@@ -4,6 +4,7 @@ import Image from "next/image";
 import moment from "moment";
 import AlbumSongs from "../../components/AlbumSongs";
 import Link from "next/link";
+import Head from "next/head";
 
 const AlbumPage = styled.div`
   display: flex;
@@ -89,37 +90,46 @@ export default function Album({ album }) {
     return <div>loading...</div>;
   }
   return (
-    <AlbumPage>
-      <Link href="/">
-        <div className="album-page-header-back">
-          <span className="material-symbols-outlined">keyboard_backspace</span>
-        </div>
-      </Link>
-      <div className="album-page-header">
-        <Image
-          className="album-image"
-          width={100}
-          height={100}
-          src={album.artworkUrl100}
-          alt={album.collectionName}
-          priority
-        />
-        <div className="album-meta">
-          <div className="album-artist">{album.artistName}</div>
-          <div className="album-collection">{album.collectionName}</div>
-          <div className="album-info">
-            <div className="album-genre">{album.primaryGenreName}</div>
-            <div className="album-year">
-              {moment(album.releaseDate).format("YYYY")}
+    <>
+      <Head>
+        <title>{album.collectionName} | WeeCare Music</title>
+        <meta name="description" content="Music for all" />
+        <link rel="icon" href="/logo.svg" />
+      </Head>
+      <AlbumPage>
+        <Link href="/">
+          <div className="album-page-header-back">
+            <span className="material-symbols-outlined">
+              keyboard_backspace
+            </span>
+          </div>
+        </Link>
+        <div className="album-page-header">
+          <Image
+            className="album-image"
+            width={100}
+            height={100}
+            src={album.artworkUrl100}
+            alt={album.collectionName}
+            priority
+          />
+          <div className="album-meta">
+            <div className="album-artist">{album.artistName}</div>
+            <div className="album-collection">{album.collectionName}</div>
+            <div className="album-info">
+              <div className="album-genre">{album.primaryGenreName}</div>
+              <div className="album-year">
+                {moment(album.releaseDate).format("YYYY")}
+              </div>
+              <div className="album-song-count">{album.trackCount} songs</div>
+              <div className="album-price">${album.collectionPrice}</div>
             </div>
-            <div className="album-song-count">{album.trackCount} songs</div>
-            <div className="album-price">${album.collectionPrice}</div>
           </div>
         </div>
-      </div>
 
-      {wrapperType === "collection" && <AlbumSongs albumId={id} />}
-    </AlbumPage>
+        {wrapperType === "collection" && <AlbumSongs albumId={id} />}
+      </AlbumPage>{" "}
+    </>
   );
 }
 

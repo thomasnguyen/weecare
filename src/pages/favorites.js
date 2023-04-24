@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { useState, useEffect } from "react";
 import MediaItem from "../components/MediaItem";
 import { MediaItemsContainer } from "../pages/index";
+import Head from "next/head";
 const FavoritesPage = styled.div`
   display: flex;
   flex-direction: column;
@@ -27,17 +28,24 @@ export default function Favorites() {
   }, []);
 
   return (
-    <FavoritesPage>
-      {favorites.length === 0 && (
-        <h3>You don't have any favorites yet. Go add some!</h3>
-      )}
-      <h3>Your favorites</h3>
+    <>
+      <Head>
+        <title>My Favorites | WeeCare Music</title>
+        <meta name="description" content="Music for all" />
+        <link rel="icon" href="/logo.svg" />
+      </Head>
+      <FavoritesPage>
+        {favorites.length === 0 && (
+          <h3>You don't have any favorites yet. Go add some!</h3>
+        )}
+        <h3>Your favorites</h3>
 
-      <MediaItemsContainer>
-        {favorites.map((favorite) => (
-          <MediaItem key={favorite.id} media={favorite} />
-        ))}
-      </MediaItemsContainer>
-    </FavoritesPage>
+        <MediaItemsContainer>
+          {favorites.map((favorite) => (
+            <MediaItem key={favorite.id} media={favorite} />
+          ))}
+        </MediaItemsContainer>
+      </FavoritesPage>
+    </>
   );
 }
